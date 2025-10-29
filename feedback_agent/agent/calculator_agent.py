@@ -1,6 +1,6 @@
 from autogen import ConversableAgent
 from typing import Annotated, Literal
-from feedback_agent.config import LLM_CONFIG
+from feedback_agent.config.LLM_CONFIG import LLM_CONFIG
 
 Operator = Literal["+", "-", "*", "/"]
 
@@ -24,6 +24,7 @@ def create_calculator_agent() -> ConversableAgent:
         system_message="You are a helpful AI assistant. "
                       "You can help with simple calculations. "
                       "Reflect on the order of operations and calculate the result. "
+                      "Inputs to the calculator tool are two integers and an operator ('+', '-', '*', '/'). "
                       "Return 'TERMINATE' when the task is done.",
         llm_config=LLM_CONFIG,
     )
@@ -37,7 +38,7 @@ def create_user_proxy():
     user_proxy = ConversableAgent(
         name="User",
         llm_config=False,
-        is_termination_msg=lambda msg: msg.get("content") is not None and "TERMINATE" in msg["content"],
+        is_termination_msg=lambda msg: msg.get("content") is not None and "TERMINATE" in msg["content"].upper(),
         human_input_mode="NEVER",
     )
     user_proxy.register_for_execution(name="calculator")(calculator)

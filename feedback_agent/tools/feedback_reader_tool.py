@@ -1,4 +1,4 @@
-from typing import List, TypedDict, Literal
+from typing import List, TypedDict, Literal, Any
 
 class Feedback(TypedDict):
     id: str
@@ -33,5 +33,5 @@ feedback_store: List[Feedback] = [
     }
 ]
 
-def query_feedback() -> List[Feedback]:
+def query_feedback(**kwargs: Any) -> List[Feedback]:
     return feedback_store

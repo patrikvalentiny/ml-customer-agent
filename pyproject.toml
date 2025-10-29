@@ -1,0 +1,12 @@
+[project]
+name = "ml-customer-feedback-agent"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "autogen==0.3.0",
+    "fix-busted-json==0.0.18",
+    "flaml[automl]>=2.3.6",
+    "ollama==0.3.3",
+]
