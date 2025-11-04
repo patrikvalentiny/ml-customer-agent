@@ -7,6 +7,8 @@ def categorize_feedback(feedback: List[str]) -> List[str]:
         name="Categorization Agent",
         system_message="You are a helpful AI assistant. "
                       "You can categorize customer feedback into themes. "
+                      "DO NOT perform categorization based on the sentiment of the feedback. "
+                      "In NO case include sentiment analysis in your response. "
                       "Given a customer feedback, you can use the categorization tool to categorize the feedback. "
                       "You will provide a list of themes in the following format: '[theme1, theme2, ...]'. "
                       "Example result: '[usability, performance]'. "

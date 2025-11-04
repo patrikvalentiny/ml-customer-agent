@@ -67,30 +67,9 @@ def main():
         message="""
                 1. Read feedback from the feedback store, using the feedback_reader tool, only call the function once.
                 2. Take all the inputs and analyze the sentiment using the sentiment_analysis tool.
-                3. Create a JSON object that contains the feedback id and the analyzed sentiment.
-                Example:
-                [
-                    {"id": "1", "sentiment": "positive"},
-                    {"id": "2", "sentiment": "negative"},
-                    {"id": "3", "sentiment": "neutral"}
-                ]
-                4. Take all the feedback and categorize the feedback into themes using the categorization tool.
-                5. Create a JSON object that contains the feedback id and the list of themes.
-                Example:
-                [
-                    {"id": "1", "themes": ["usability", "design"]},
-                    {"id": "2", "themes": ["performance", "reliability"]},
-                    {"id": "3", "themes": ["customer service"]}
-                ]
-                6. Extract keywords from all the feedback using the keyword_extraction tool.
-                7. Create a JSON object that contains the feedback id and the list of keywords.
-                Example:
-                [
-                    {"id": "1", "keywords": ["love", "product"]},
-                    {"id": "2", "keywords": ["great", "product"]},
-                    {"id": "3", "keywords": ["great", "experience", "product"]}
-                ]
-                8. Return a valid JSON objects from both sentiment analysis and categorization as the final output, make sure the key matches the tool used.
+                3. Take all the feedback and categorize the feedback into themes using the categorization tool.
+                4. Extract keywords from all the feedback using the keyword_extraction tool.
+                5. Return a valid JSON objects from both sentiment analysis and categorization as the final output, make sure the key matches the tool used.
                 """
     )
     # print("Chat History:")
