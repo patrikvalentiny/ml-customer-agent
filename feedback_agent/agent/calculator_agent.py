@@ -1,6 +1,6 @@
 from autogen import ConversableAgent
 from typing import Annotated, Literal
-from feedback_agent.config.LLM_CONFIG import LLM_CONFIG
+from feedback_agent.config import LLM_CONFIG
 
 Operator = Literal["+", "-", "*", "/"]
 
